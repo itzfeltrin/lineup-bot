@@ -9,16 +9,18 @@ var T = new Twit(config);
 //tweeting it the first time, otherwise it would take 20 secs for the first tweet
 tweetIt();
 //tweeting every 20 secs
-setInterval(tweetIt, 1000*20)
+setInterval(tweetIt, 1000*60*60*2)
 
 function tweetIt() {
-	//generating new lineup everytime
-	var content = reader();
-	var r = Math.floor(Math.random() * 100);
+	//generating new lineup everytime	
+	content = reader();		
 
 	var tweet = {
 		status: content
 	}
+
+	//console.log(tweet);
+
 	//posting tweet
 	T.post('statuses/update', tweet, tweeted);
 
@@ -31,3 +33,6 @@ function tweetIt() {
 		}
 	}
 }
+
+
+
