@@ -7,7 +7,7 @@ var reader = require('./reader.js');
 //creating variable
 var T = new Twit(config);
 //tweeting it the first time, otherwise it would take 20 secs for the first tweet
-//tweetIt();
+tweetIt();
 //tweeting every 20 secs
 setInterval(tweetIt, 1000*60*60*2)
 
