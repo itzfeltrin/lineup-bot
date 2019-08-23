@@ -6,10 +6,10 @@ var config = require('./config');
 var reader = require('./reader.js');
 //creating variable
 var T = new Twit(config);
-//tweeting it the first time, otherwise it would take 20 secs for the first tweet
+//tweeting it the first time, otherwise it would take 2 hours for the first tweet
 tweetIt();
-//tweeting every 20 secs
-setInterval(tweetIt, 1000*60);
+//tweeting every 2 hours
+setInterval(tweetIt, 1000*60*60*2);
 
 function tweetIt() {
 	//generating new lineup everytime	
@@ -19,7 +19,7 @@ function tweetIt() {
 		status: content
 	}
 
-	console.log(tweet);
+	console.log(new Date().toLocaleString() + ' - ' + tweet);
 
 	//posting tweet
 	T.post('statuses/update', tweet, tweeted);
