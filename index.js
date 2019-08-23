@@ -19,7 +19,7 @@ function tweetIt() {
 		status: content
 	}
 
-	//console.log(tweet);
+	console.log(tweet);
 
 	//posting tweet
 	T.post('statuses/update', tweet, tweeted);
