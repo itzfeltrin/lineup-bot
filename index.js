@@ -22,7 +22,7 @@ function tweetIt() {
 	console.log(new Date().toLocaleString() + ' - ' + tweet);
 
 	//posting tweet
-	T.post('statuses/update', tweet, tweeted);
+	//T.post('statuses/update', tweet, tweeted);
 
 	function tweeted(err, data, response) {
 		if(err) {

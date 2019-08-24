@@ -7,6 +7,7 @@ var arrayZagueiros = fs.readFileSync('./txt/centerbacks.txt').toString().split('
 var arrayMeias = fs.readFileSync('./txt/midfielders.txt').toString().split('\r\n');
 var arrayAtacantes = fs.readFileSync('./txt/strikers.txt').toString().split('\r\n');
 var arrayTecnicos = fs.readFileSync('./txt/managers.txt').toString().split('\r\n');
+var arrayEstadios = fs.readFileSync('./txt/stadiums.txt').toString().split('\r\n');
 
 function sort(array, nr) {
 	if(nr == 1) return array[Math.floor(Math.random() * array.length)];
@@ -46,10 +47,12 @@ module.exports = function (f) {
 	var st = sort(arrayAtacantes, f.ataque);
 	var mg = sort(arrayTecnicos, 1);
 	var op = sort(arrayOponentes, 1);
+	var stadium = sort(arrayEstadios, 1);
 
-	var resp = 'Internacional x ' + op; + '.'
+	var resp = 'Internacional x ' + op; + '.';
+	resp += '\nEstádio: ' + stadium;
 
-	resp += '\n\nFormacao: ' + f.toString();
+	resp += '\n\nFormacao: ' + f.toString();	
 	
 	resp += '\n';
 	resp += ('\n' + gk);
