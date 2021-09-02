@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 const fetchTeams = async () => {
   try {
-    const res = await fetch("http://localhost:3000/data/teams.json");
+    const res = await fetch("http://localhost:3000/public/data/teams.json");
 
     const data = await res.json();
 
@@ -14,7 +14,7 @@ const fetchTeams = async () => {
 
 const fetchStadiums = async () => {
   try {
-    const res = await fetch("http://localhost:3000/data/stadiums.json");
+    const res = await fetch("http://localhost:3000/public/data/stadiums.json");
 
     const data = await res.json();
 
@@ -26,7 +26,7 @@ const fetchStadiums = async () => {
 
 const fetchPlayers = async () => {
   try {
-    const res = await fetch("http://localhost:3000/data/players.json");
+    const res = await fetch("http://localhost:3000/public/data/players.json");
 
     const data = await res.json();
 

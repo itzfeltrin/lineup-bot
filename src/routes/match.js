@@ -7,22 +7,12 @@ const {
   getMatchDate,
   getFormation,
   getFormationPlayers,
-  getHour,
-} = require("./util/helpers");
-const { fetchTeams, fetchStadiums, fetchPlayers } = require("./services");
-const postTweet = require("./poster");
+} = require("../util/helpers");
+const { fetchTeams, fetchStadiums, fetchPlayers } = require("../services");
 
-const app = express();
-app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+const router = express.Router();
 
-app.get("/", (_, res) => {
-  res.send("Hello World!");
-});
-
-const PORT = 3000;
-
-app.get("/match", async (_, res) => {
+router.get("/", async (_, res) => {
   try {
     const teams = await fetchTeams();
     const stadiums = await fetchStadiums();
@@ -47,17 +37,11 @@ app.get("/match", async (_, res) => {
 
     fs.writeFileSync("public/generated-lineup-data.json", JSON.stringify(obj));
 
-    res.render("./match/index.ejs", obj);
+    res.render("../src/views/match/index.ejs", obj);
   } catch (err) {
     console.log(err);
     res.send(err);
   }
 });
 
-app.listen(PORT);
-
-postTweet();
-
-setInterval(() => {
-  postTweet();
-}, getHour(2));
+module.exports = router;

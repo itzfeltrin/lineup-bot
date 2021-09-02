@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/styles/match.css" />
-    <script src="/public/script/match.js"></script>
+    <link rel="stylesheet" href="public/styles/match.css" />
   </head>
   <body>
     <div id="container">
@@ -14,16 +13,16 @@
         <div id="logos">
           <div class="team">
             <div class="logo-wrapper">
-              <img class="logo" src="/img/team/inter.svg" alt="Inter" />
+              <img class="logo" src="/public/img/team/inter.svg" alt="Inter" />
             </div>
             <span>Inter</span>
           </div>
-          <img id="versus" src="/img/versus.svg" alt="Versus" />
+          <img id="versus" src="/public/img/versus.svg" alt="Versus" />
           <div class="team">
             <div class="logo-wrapper">
               <img
                 class="logo"
-                src="/img/team/<%= locals.team.id %>.svg"
+                src="/public/img/team/<%= locals.team.id %>.svg"
                 alt="<%= locals.team.name %>"
               />
             </div>
@@ -31,7 +30,7 @@
           </div>
         </div>
         <div id="stadium-box">
-          <img id="location" src="/img/location.svg" alt="Localização" />
+          <img id="location" src="public/img/location.svg" alt="Localização" />
           <span id="stadium"><%= locals.stadium.name %></span>
         </div>
         <div id="date-box">

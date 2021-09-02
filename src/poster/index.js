@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const twit = require("twit");
 const config = require("./config");
-const { getStatus } = require("./util/helpers");
+const { getStatus } = require("../util/helpers");
 
 const t = new twit(config);
 
