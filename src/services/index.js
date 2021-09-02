@@ -1,10 +1,10 @@
-const fetch = require("node-fetch");
+const fs = require("fs");
 
 const fetchTeams = async () => {
   try {
-    const res = await fetch("http://localhost:3000/public/data/teams.json");
+    const res = fs.readFileSync("public/data/teams.json", "utf8");
 
-    const data = await res.json();
+    const data = JSON.parse(res);
 
     return data;
   } catch (err) {
@@ -14,9 +14,9 @@ const fetchTeams = async () => {
 
 const fetchStadiums = async () => {
   try {
-    const res = await fetch("http://localhost:3000/public/data/stadiums.json");
+    const res = fs.readFileSync("public/data/stadiums.json", "utf8");
 
-    const data = await res.json();
+    const data = JSON.parse(res);
 
     return data;
   } catch (err) {
@@ -26,9 +26,9 @@ const fetchStadiums = async () => {
 
 const fetchPlayers = async () => {
   try {
-    const res = await fetch("http://localhost:3000/public/data/players.json");
+    const res = fs.readFileSync("public/data/players.json", "utf8");
 
-    const data = await res.json();
+    const data = JSON.parse(res);
 
     return data;
   } catch (err) {

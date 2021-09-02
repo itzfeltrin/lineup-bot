@@ -35,7 +35,7 @@ module.exports = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  await page.goto("http://localhost:3000/match");
+  await page.goto(`${process.env.NODE_API_URL}match`);
 
   page.setViewport({ width: 800, height: 1280 });
 

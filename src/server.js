@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const poster = require("./poster");
@@ -18,8 +19,8 @@ app.use("/match", matchRoutes);
 
 app.listen(PORT);
 
-// poster();
+poster();
 
-// setInterval(() => {
-//   poster();
-// }, getHour(72));
+setInterval(() => {
+  poster();
+}, getHour(72));
