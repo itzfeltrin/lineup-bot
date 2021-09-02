@@ -18,8 +18,8 @@ app.use("/match", matchRoutes);
 
 app.listen(PORT);
 
-poster();
+// poster();
 
-setInterval(() => {
-  poster();
-}, getHour(72));
+// setInterval(() => {
+//   poster();
+// }, getHour(72));
