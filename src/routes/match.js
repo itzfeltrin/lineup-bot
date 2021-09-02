@@ -7,6 +7,7 @@ const {
   getMatchDate,
   getFormation,
   getFormationPlayers,
+  getChampionship,
 } = require("../util/helpers");
 const { fetchTeams, fetchStadiums, fetchPlayers } = require("../services");
 
@@ -24,6 +25,7 @@ router.get("/", async (_, res) => {
     const formationPlayers = getFormationPlayers(formation, players);
     const manager = getRandomItem(players.managers);
     manager.class = "manager";
+    const championship = getChampionship();
 
     const obj = {
       team,
@@ -33,6 +35,7 @@ router.get("/", async (_, res) => {
       matchTime: getMatchTime(),
       formationPlayers,
       manager,
+      championship,
     };
 
     fs.writeFileSync("public/generated-lineup-data.json", JSON.stringify(obj));
