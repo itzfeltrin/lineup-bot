@@ -1,1 +1,1 @@
-web: nodemon src/server.js --ext js
+web: node src/server.js --ext js
