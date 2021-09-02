@@ -32,7 +32,9 @@ const tweet = () => {
 };
 
 module.exports = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox"],
+  });
   const page = await browser.newPage();
 
   await page.goto(`${process.env.NODE_API_URL}match`);
