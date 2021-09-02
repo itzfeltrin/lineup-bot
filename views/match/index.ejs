@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/match.css" />
+    <script src="/public/script/match.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="info">
+        <div id="logos">
+          <div class="team">
+            <div class="logo-wrapper">
+              <img class="logo" src="/img/team/inter.svg" alt="Inter" />
+            </div>
+            <span>Inter</span>
+          </div>
+          <img id="versus" src="/img/versus.svg" alt="Versus" />
+          <div class="team">
+            <div class="logo-wrapper">
+              <img
+                class="logo"
+                src="/img/team/<%= locals.team.id %>.svg"
+                alt="<%= locals.team.name %>"
+              />
+            </div>
+            <span><%= locals.team.name %></span>
+          </div>
+        </div>
+        <div id="stadium-box">
+          <img id="location" src="/img/location.svg" alt="Localização" />
+          <span id="stadium"><%= locals.stadium.name %></span>
+        </div>
+        <div id="date-box">
+          <span class="date"><%= locals.matchDate %></span>
+          <span class="date"><%= locals.matchDay %></span>
+          <span class="date">às <span><%= locals.matchTime %></span></span>
+        </div>
+      </div>
+      <div id="manager-box">
+        <span>Téc: </span>
+        <%- include('player', {player: locals.manager}); %>
+      </div>
+      <span>
+        <% locals.formationPlayers.forEach(function(item) { %> <%-
+        include('player', {player: item}); %> <% }); %>
+      </span>
+    </div>
+  </body>
+</html>
